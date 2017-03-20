@@ -1,0 +1,12 @@
+<!--% title "About movies" %-->
+<h3>Welcome to the movie club</h3>
+
+<%= form_tag "/movies", method: "get" do  %>
+  <select name="movie_id">
+    <% @movies.each do |m| %>
+      <option value="<%= m.id %>"><%= m.name %></option>
+    <%end%>
+  </select>
+  <%= submit_tag "Go" %>
+
+  <% end %>

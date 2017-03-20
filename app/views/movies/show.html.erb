@@ -1,0 +1,6 @@
+<h1>All about <%= @movie.name %>!</h1>
+<ul>
+  <% @movie.movies.each do |forum| %>
+    <li><%= link_to forum.name, forum_path(forum.id) %></li>
+  <%end%>
+</ul>

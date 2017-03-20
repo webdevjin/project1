@@ -8,8 +8,8 @@ class MoviesController < ApplicationController
   end
 
   def show
-
-  end
+   @movie = Movie.find(params[:movie_id])
+ end
 
 
 end
