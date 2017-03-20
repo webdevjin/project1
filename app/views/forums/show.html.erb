@@ -1,6 +1,5 @@
-<h1>This is <%= @forum.name %>!</h1>
+<h1> <%= @forum.movie.name %></h1>
 
-<h3>Posts</h3>
-<ul>
-  <% @forum.posts.each do |post| %>
-   <li>
+<% @forum.posts.each do |post| %>
+  <p><%= post.message %></p>
+<% end %>

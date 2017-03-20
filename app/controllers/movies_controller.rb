@@ -12,4 +12,12 @@ class MoviesController < ApplicationController
  end
 
 
+
+ private
+
+ def clean_params
+   params.require(:movie).permit(:name)
+ end
+
+
 end

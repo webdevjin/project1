@@ -17,13 +17,14 @@ m3 = Movie.create name: "Finding Nemo", genre: "Comedy", plot: "Lost fish", user
 m4 = Movie.create name: "Sully", genre: "Drama", plot: "Plane crashed", user: u1, image: "http://fillmurray.com/"
 
 f1 = Forum.create name: "Love the flying", movie: m1, user: u1
-f2 = Forum.create name: "Just keep swimming", movie: m1, user: u1
-f3 = Forum.create name: "We're going to be in the Hudson", movie: m1, user: u1
+f2 = Forum.create name: "Good action scenes", movie: m2, user: u2
+f3 = Forum.create name: "Just keep swimming", movie: m3, user: u3
+f4 = Forum.create name: "We're going to be in the Hudson", movie: m4, user: u1
 
 p1 = Post.create message: "So fast!", user: u1, forum: f1
-p2 = Post.create message: "Very good", user: u1, forum: f1
-p3 = Post.create message: "Hank is awesome", user: u1, forum: f1
-p3 = Post.create message: "Thoughtful work", user: u1, forum: f1
+p2 = Post.create message: "Good work", user: u1, forum: f2
+p3 = Post.create message: "Good work", user: u1, forum: f3
+p4 = Post.create message: "Hank is awesome", user: u1, forum: f4
 
 
 puts "Seeding done!"

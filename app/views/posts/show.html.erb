@@ -1,0 +1,8 @@
+
+<h3>more talk: </h3>
+
+<ul>
+  <% @post.forums.each do |forum| %>
+  <li><% post_path(forum.id) %> </li>
+ <% end %>
+</ul>
