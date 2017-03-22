@@ -1,0 +1,14 @@
+<h1>Add Movie</h1>
+
+<%= form_for @movie,  :html => {:multipart => true} do |f|%>
+   <%= render partial: "includes/form_errors", locals: {form: f} %>
+
+  <input type="hidden" name="movie[movie_id]" value="<%= @movie_id %>" />
+  <p>
+    <p>Movie name: <%= f.text_field :name %></p>
+    <p>Genre: <%= f.text_field :genre %></p>
+    <p>Plot : <%= f.text_field :plot %></p>
+    <p>Image: <%= f.cl_image_upload :image %></p>
+
+  <%= f.submit %>
+<%end%>

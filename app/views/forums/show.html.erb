@@ -2,4 +2,7 @@
 
 <% @forum.posts.each do |post| %>
   <p><%= post.message %></p>
+  <p><%= post.image %></p>
 <% end %>
+
+<%= link_to "New Post", new_post_path(forum_id: @forum.id) %>

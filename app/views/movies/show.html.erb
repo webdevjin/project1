@@ -1,6 +1,32 @@
-<h1>All talks about <%= @movie.name %></h1>
+<h1><%= @movie.name %> movie details page</h1>
+<p>Genre: <%= @movie.genre %></p>
+<p>Plot: <%= @movie.plot %></p>
+<p>Image: <%= cl_image_tag @movie.image, class: 'movie-image' %></p>
+
+
+<h3><%= @movie.name %> List of forums </h3>
 <ul>
   <% @movie.forums.each do |forum| %>
     <li><%= link_to forum.name, forum_path(forum.id) %></li>
   <%end%>
 </ul>
+
+<% if @forum.errors %>
+  <ul>
+    <% @forum.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <%end%>
+  </ul>
+<%end%>
+
+<%= form_for @forum do |f|%>
+  <input type="hidden" name="forum[movie_id]" value="<%= @movie.id %>" />
+  <p>
+  <p> Add new forum</p>
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+
+  <%= f.submit %>
+<%end%>

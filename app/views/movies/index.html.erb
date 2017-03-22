@@ -1,12 +1,34 @@
-<!--% title "About movies" %-->
+
 <h3>Welcome to the movie club</h3>
 
-<%= form_tag "/movies", method: "get" do  %>
-  <select name="movie_id">
-    <% @movies.each do |m| %>
-      <option value="<%= m.id %>"><%= m.name %></option>
-    <%end%>
-  </select>
-  <%= submit_tag "Go" %>
+<h4>Latest Movies Added</h4>
 
+<ul>
+<% @recently_added.each do |m| %>
+  <li><%= link_to m.name, movie_path(m.id) %></li>
+<%end%>
+</ul>
+
+<br><br>
+
+<h4>All Movies</h4>
+<ul>
+<% @movies.each do |m| %>
+  <li><%= link_to m.name, movie_path(m.id) %></li>
+<%end%>
+</ul>
+<br>
+<!--add new movie-->
+  <p>
+  <% if @current_user.present? %>
+    <%= link_to "Add New Movie", new_movie_path %>
   <% end %>
+
+  <% if @movie.errors %>
+    <ul>
+      <% @movie.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <%end%>
+    </ul>
+  </p>
+  <%end%>

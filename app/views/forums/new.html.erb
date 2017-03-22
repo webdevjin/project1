@@ -1,0 +1,17 @@
+<% if @forum.errors %>
+  <ul>
+    <% @forum.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <%end%>
+  </ul>
+<%end%>
+
+<%= form_for @forum do |f|%>
+  <input type="hidden" name="forum[forum_id]" value="<%= @forum_id %>" />
+
+    <p>New forum topic<%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+
+  <%= f.submit %>
+<%end%>

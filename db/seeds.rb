@@ -11,9 +11,9 @@ u1 = User.create name: "Luke H", email: "textchimp@gmail.com", password: "passwo
 u2 = User.create name: "Mary J", email: "maryj@yahoo.com", password: "pass123"
 u3 = User.create name: "John S", email: "johns@gmail.com", password: "passABC"
 
-m1 = Movie.create name: "Top Gun", genre: "Flying", plot: "America invades", user: u1, image: "http://fillmurray.com/"
+m1 = Movie.create name: "Top Gun", genre: "Flying", plot: "America invades", user: u1, image: "http://mozistar.hu/filmcover/625/cover/mv5bmty3odg4otu3nl5bml5banbnxkftztywmji1nzg4-v1-sy317-cr3-0-214-317.jpg"
 m2 = Movie.create name: "Troy", genre: "Action", plot: "War heroes", user: u2, image: "http://fillmurray.com/"
-m3 = Movie.create name: "Finding Nemo", genre: "Comedy", plot: "Lost fish", user: u3, image: "http://fillmurray.com/"
+m3 = Movie.create name: "Finding Nemo", genre: "Comedy", plot: "Lost fish", user: u3, image: "http://cdn.akamai.steamstatic.com/steam/apps/331450/header.jpg?t=1488435477"
 m4 = Movie.create name: "Sully", genre: "Drama", plot: "Plane crashed", user: u1, image: "http://fillmurray.com/"
 
 f1 = Forum.create name: "Love the flying", movie: m1, user: u1

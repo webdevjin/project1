@@ -1,0 +1,10 @@
+<h1>Add new post</h1>
+
+
+<%= form_for @post do |f|%>
+ <%= render partial: "includes/form_errors", locals: {form: f} %>
+  <input type="hidden" name="post[forum_id]" value="<%= @forum_id %>" />
+    <p>Message: <%= f.text_field :message %></p>
+    <p>Image: <%= f.text_field :message %></p>
+  <%= f.submit %>
+<%end%>

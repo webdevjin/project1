@@ -6,3 +6,7 @@
   <li><% post_path(forum.id) %> </li>
  <% end %>
 </ul>
+
+<% form_for @post do |f| %>
+  <%= f.error_message %>
+  <% end %>
