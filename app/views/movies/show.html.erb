@@ -5,7 +5,7 @@
   <%# image_tag @movie.image, class: 'movie-image' %></p>
 
 
-<h3><%= @movie.name %> List of forums </h3>
+<h4><%= @movie.name %> List of forums </h4>
 <ul>
   <% @movie.forums.each do |forum| %>
     <li><%= link_to forum.name, forum_path(forum.id) %></li>
@@ -23,9 +23,9 @@
 <%= form_for @forum do |f|%>
   <input type="hidden" name="forum[movie_id]" value="<%= @movie.id %>" />
   <p>
-  <p> Add new forum</p>
+  <h4> Add new forum</h4>
   <p>
-    <%= f.label :name %>
+    <%= f.label :Forum %>
     <%= f.text_field :name %>
   </p>
 

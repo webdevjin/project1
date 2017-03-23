@@ -8,6 +8,7 @@ class MoviesController < ApplicationController
     @movie = Movie.new
 
     @recently_added = Movie.all.order('created_at DESC').take(5)
+  
   end
 
   def new

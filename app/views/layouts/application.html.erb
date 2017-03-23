@@ -6,28 +6,33 @@
 
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+
     <%= cloudinary_js_config %>
   </head>
 
   <body>
+    <div class="container">
     <div id="navigation">
-      <%= link_to "Home Page", root_path %><%= link_to "LogIn", login_path %> <%= link_to "LogOut", root_path %> <%= link_to "Create Account", sign_up_path %>
+      <%= image_tag "/assets/project1Logo.png", class: "logo" %>
+      <p><%= link_to "Home", root_path %><%= link_to "LogIn", login_path %> <%= link_to "LogOut", root_path %> <%= link_to "Create Account", sign_up_path %><p>
     </div>
-      <ul>
-        <% unless @current_user.present? %>
-        <li><!--%= link_to("movies#index", movie_path) %--></li>
-          <li><%= link_to("Sign Up", sign_up_path) %></li>
-          <li><%= link_to("Log In", login_path) %></li>
-        <% else %>
-        <p>
-          <li>Welcome, <%= @current_user.name %></li>
-          <li><%= link_to("Log Out", log_out_path, :method => :delete) %></li>
-        </p>
-        <% end %>
-      </ul>
 
+    <h4>Hi, <%= @current_user.name %></h4>
+    <p>
+         <%= render "includes/flash_notices" %>
+         <%= yield %>
 
-        <%= yield %>
+         <ul>
+           <% unless @current_user.present? %>
+           <li><!--%= link_to("movies#index", movie_path) %--></li>
+             <li><%= link_to("Sign Up", sign_up_path) %></li>
+             <li><%= link_to("Log In", login_path) %></li>
+           <% else %>
+             <li><%= link_to("Log Out", log_out_path, :method => :delete) %></li>
+           </p>
+           <% end %>
+         </ul>
+       </div>
 
   </body>
 </html>
