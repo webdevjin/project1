@@ -25,13 +25,12 @@ h2, h3, h4, h5, h6, p {
 }
 
 .movie-image{
-  max-width: 200px;
-  max-height: 200px;
+  max-width: 150px;
 }
 
 a:link {
 	color: #19110f;
-	text-decoration: none;
+	text-decoration: underline;
 }
 a:visited {
 	color: #794044;

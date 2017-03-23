@@ -1,14 +1,14 @@
-<h1><%= @movie.name %> movie details page</h1>
+<h2><%= @movie.name %></h2>
 <p>Genre: <%= @movie.genre %></p>
 <p>Plot: <%= @movie.plot %></p>
-<p>Image: <img src="<%= @movie.image %>" /></p>
-  <%# image_tag @movie.image, class: 'movie-image' %></p>
+<p><img src="<%= @movie.image %>" /></p>
+  <% image_tag @movie.image, class: 'movie-image' %></p>
 
 
 <h4><%= @movie.name %> List of forums </h4>
 <ul>
   <% @movie.forums.each do |forum| %>
-    <li><%= link_to forum.name, forum_path(forum.id) %></li>
+    <p><%= link_to forum.name, forum_path(forum.id) %></p>
   <%end%>
 </ul>
 
