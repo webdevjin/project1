@@ -27,7 +27,7 @@ class PostsController < ApplicationController
   private
 
   def clean_params
-    params.require(:post).permit(:message, :image, :forum_id)
+    params.require(:post).permit(:message, :image, :forum_id, :video, :address)
   end
 
 end

@@ -11,16 +11,11 @@
 
 <br><br>
 
-<h4>All Movies</h4>
-<ul>
-<% @movies.each do |m| %>
-  <li><%= link_to m.name, movie_path(m.id) %></li>
-<%end%>
-</ul>
-<br>
+
 <!--add new movie-->
-  <p>
+  <h4>
   <% if @current_user.present? %>
+
     <%= link_to "Add New Movie", new_movie_path %>
   <% end %>
 
@@ -30,5 +25,15 @@
         <li><%= msg %></li>
       <%end%>
     </ul>
-  </p>
+  </h4>
   <%end%>
+  <p>Please <%= link_to "Login", login_path, class: "item" %> to add new movie</p>
+
+
+<h4>All Movies</h4>
+<ul>
+<% @movies.each do |m| %>
+  <li><%= link_to m.name, movie_path(m.id) %></li>
+<%end%>
+</ul>
+<br>

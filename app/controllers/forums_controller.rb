@@ -1,4 +1,5 @@
 class ForumsController < ApplicationController
+  before_action :authenticate_user, only: [:edit, :update, :create, :new, :destroy]
 
   def show
     @forum = Forum.find(params[:id])
@@ -12,7 +13,12 @@ class ForumsController < ApplicationController
   end
 
   def create
+# raise params
+
     @forum = Forum.new(clean_params)
+
+    @forum.user = @current_user
+
     if @forum.save
       redirect_to forum_path(@forum.id)
     else
@@ -24,7 +30,7 @@ class ForumsController < ApplicationController
   private
 
   def clean_params
-    params.require(:forum).permit(:name)
+    params.require(:forum).permit(:name, :movie_id)
   end
 
 end
