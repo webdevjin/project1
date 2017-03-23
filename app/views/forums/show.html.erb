@@ -1,16 +1,15 @@
-<h1> <%= @forum.movie.name %>: <%= @forum.name %></h1>
+<h1>Topic: <%= @forum.name %></h1>
+<h3>Movie: <%= link_to @forum.movie.name, movie_path(@forum.movie_id) %></h3>
 
 <% @forum.posts.each do |post| %>
   <p><%= post.message %></p>
-  <p><%= post.image %></p>
-
+  <p><%= cl_image_tag post.image, class: 'movie-image' %></p>
+  <p>
   <% if post.video.present? %>
-
    <iframe width="300" height="200"
     src="<%= post.video.sub("www.youtube.com/watch?v=", "www.youtube.com/embed/") %>"
     frameborder="0" allowfullscreen></iframe>
   <% end %>
-
 <% end %>
-
+</p>
 <%= link_to "New Post", new_post_path(forum_id: @forum.id) %>

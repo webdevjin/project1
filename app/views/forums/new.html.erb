@@ -9,7 +9,7 @@
 <%= form_for @forum do |f|%>
   <input type="hidden" name="forum[forum_id]" value="<%= @forum_id %>" />
 
-    <p>New forum topic<%= f.label :name %>
+    <p>New topic<%= f.label :name %>
     <%= f.text_field :name %>
   </p>
 

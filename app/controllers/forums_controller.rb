@@ -30,7 +30,7 @@ class ForumsController < ApplicationController
   private
 
   def clean_params
-    params.require(:forum).permit(:name, :movie_id)
+    params.require(:forum).permit(:name, :movie_id, :post_id)
   end
 
 end

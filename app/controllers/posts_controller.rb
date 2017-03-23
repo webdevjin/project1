@@ -17,6 +17,12 @@ class PostsController < ApplicationController
 
       @post.user = @current_user
 
+      if params[:file].present?
+        req = Cloudinary::Uploader.upload(params[:file])
+        @post.image = req["public_id"]
+      end
+
+
       if @post.save
         redirect_to forum_path(@post.forum_id)
       else
@@ -27,7 +33,7 @@ class PostsController < ApplicationController
   private
 
   def clean_params
-    params.require(:post).permit(:message, :image, :forum_id, :video, :address)
+    params.require(:post).permit(:message, :forum_id, :video, :address)
   end
 
 end

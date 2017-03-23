@@ -27,7 +27,7 @@ movie_file.each do |line|
   #randomly select a user
   user = User.offset(rand(User.count)).first
 
-  Movie.create(name: name, genre: genre, plot: plot, image: image, user: user)
+  Movie.create(name: name, genre: genre, plot: plot, absolute_image: image, user: user)
 end
 
 f1 = Forum.create name: "Love the flying", movie: Movie.offset(0).first, user: u1

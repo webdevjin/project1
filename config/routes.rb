@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 root "movies#index"
 get "/movies", to: "movies#show"
 get "/forums", to: "forum#show"
+get "/posts", to: "form#show"
 
 resources :movies
 resources :forums, only: [:show, :create]

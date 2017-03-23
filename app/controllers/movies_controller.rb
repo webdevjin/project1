@@ -8,7 +8,7 @@ class MoviesController < ApplicationController
     @movie = Movie.new
 
     @recently_added = Movie.all.order('created_at DESC').take(5)
-  
+
   end
 
   def new
@@ -40,7 +40,7 @@ class MoviesController < ApplicationController
  private
 
  def clean_params
-   params.require(:movie).permit(:name)
+   params.require(:movie).permit(:name, :plot, :genre)
  end
 
 end

@@ -1,12 +1,12 @@
 <h1>Add new post</h1>
 
 
-<%= form_for @post do |f|%>
+<%= form_for @post,  :html => {:multipart => true} do |f|%>
  <%= render partial: "includes/form_errors", locals: {form: f} %>
   <input type="hidden" name="post[forum_id]" value="<%= @forum_id %>" />
     <p>Message: <%= f.text_field :message %></p>
     <p>Image: <%= f.cl_image_upload :image %></p>
-    <p>Video link: <%= f.text_field :video %></p>
+    <p>Youtube link: <%= f.text_field :video %></p>
     <p>Address: <%= f.text_field :address %></p>
   <%= f.submit %>
 <%end%>
