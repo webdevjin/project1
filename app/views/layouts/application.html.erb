@@ -10,7 +10,9 @@
   </head>
 
   <body>
-
+    <div id="navigation">
+      <%= link_to "Home Page", root_path %><%= link_to "LogIn", login_path %> <%= link_to "LogOut", root_path %> <%= link_to "Create Account", sign_up_path %>
+    </div>
       <ul>
         <% unless @current_user.present? %>
         <li><!--%= link_to("movies#index", movie_path) %--></li>

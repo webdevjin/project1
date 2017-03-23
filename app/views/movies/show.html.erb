@@ -1,7 +1,8 @@
 <h1><%= @movie.name %> movie details page</h1>
 <p>Genre: <%= @movie.genre %></p>
 <p>Plot: <%= @movie.plot %></p>
-<p>Image: <%= cl_image_tag @movie.image, class: 'movie-image' %></p>
+<p>Image: <img src="<%= @movie.image %>" /></p>
+  <%# image_tag @movie.image, class: 'movie-image' %></p>
 
 
 <h3><%= @movie.name %> List of forums </h3>

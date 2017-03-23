@@ -3,7 +3,8 @@ class MoviesController < ApplicationController
 
 
   def index
-    @movies = Movie.all.order :name
+    @movies = Movie.paginate(:page => params[:page]) #Movie.all.order :name
+
     @movie = Movie.new
 
     @recently_added = Movie.all.order('created_at DESC').take(5)
