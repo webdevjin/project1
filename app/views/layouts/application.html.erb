@@ -31,9 +31,9 @@
         <%= image_tag "/assets/project1Logo.png", class: "logo" %>
 <div class="account">
 <% if @current_user.present? %>
-  <%= @current_user.name %></div>
+<p> Hi, <%= @current_user.name %></div>
         <% end %>
-    </div>
+    </div></p>
 
     <div class="maincontent">
       <p><p><i>
