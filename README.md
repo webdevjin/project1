@@ -1,11 +1,12 @@
-# README
+# Project1: Ruby on Rails application
+#### Developed by: Jin Liaskos, GA-wdi20, Sydney 2017
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Live Demo: https://arcane-caverns-27765.herokuapp.com/
+
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version Rails 5.0.2
 
 * System dependencies
 

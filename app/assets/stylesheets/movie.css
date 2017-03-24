@@ -2,7 +2,9 @@ body {
 	font: 80%/1.4 Verdana, Arial, Helvetica, sans-serif;
 	margin-left:5px;
 	padding: 0;
-  background: #fff;
+  background: #000;
+  background-image: url("bg.png");
+  background-repeat: no-repeat;
 	color: #000;
 }
 
@@ -45,7 +47,7 @@ a:hover, a:active, a:focus {
 .container {
 	max-width: 800px;
 	margin: 0 auto;
-  background-color: green;
+  background-color: #fff;
   padding: 0px;
 }
 
@@ -104,7 +106,7 @@ a:hover, a:active, a:focus {
 .logo {
   max-width: 100px;
 	position:absolute;
-	top:2px;
+	top:4px;
 	margin-left: 10px;
 }
 
@@ -130,7 +132,7 @@ ul.nav li a {
     color: #96755e;
     background-color: #ffffff;
 
-    padding: 10px 5px;
+    padding: 10px 8px;
     text-decoration: none;
 }
 
@@ -146,4 +148,6 @@ ul.nav li a:hover {
 .account {
     float:  right;
     	margin-top: -20px;
+      padding: 5px 8px;
+      color: #cc0000;
 }

@@ -8,12 +8,10 @@
   <% if post.video.present? %>
 
     <% if post.video.include? "/youtu.be/" %>
-    <!-- 1 -->
       <iframe width="300" height="200"
        src="<%= post.video.sub("youtu.be/", "www.youtube.com/embed/") %>"
        frameborder="0" allowfullscreen></iframe>
     <% else %>
-    <!-- 2 -->
      <iframe width="300" height="200"
       src="<%= post.video.sub("www.youtube.com/watch?v=", "www.youtube.com/embed/") %>"
       frameborder="0" allowfullscreen></iframe>
